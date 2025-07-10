@@ -6,23 +6,23 @@
 */
 
 let deck = [];
-const tipos = ["C","D","H","S"];
-const especiales = ["A","J","Q","K"];
+const tipos = ["C", "D", "H", "S"];
+const especiales = ["A", "J", "Q", "K"];
 
 let cartasJugador = [];
 let cartasComputadoras = [];
 
 // Esta funcion crea un nuevo deck
-const crearDeck = () =>{
-    for(let i = 2; i <= 10; i++){
-        for(let tipo of tipos){
-            deck.push(i+tipo);
+const crearDeck = () => {
+    for (let i = 2; i <= 10; i++) {
+        for (let tipo of tipos) {
+            deck.push(i + tipo);
         }
     }
 
-    for(let tipo of tipos){
-        for(let esp of especiales){
-            deck.push(esp+tipo);
+    for (let tipo of tipos) {
+        for (let esp of especiales) {
+            deck.push(esp + tipo);
         }
     }
 
@@ -38,7 +38,8 @@ crearDeck();
 // Esta funcion me permite tomar una carta
 
 const pedirCarta = () => {
-    if(deck.length === 0){
+    console.log("Largo del Deck: ", deck.length);
+    if (deck.length === 0) {
         throw "No hay cartas en el deck";
     }
     const carta = deck.pop();
@@ -46,6 +47,6 @@ const pedirCarta = () => {
     return carta;
 }
 
-deck = [];
+//deck = [];
 pedirCarta();
 console.log(deck);
